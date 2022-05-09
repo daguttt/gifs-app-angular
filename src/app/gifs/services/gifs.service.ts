@@ -11,7 +11,7 @@ export class GifsService {
     return [...this._queryHistory];
   }
   addQueryToHistory(query: string = '') {
-    query = query.toLowerCase();
+    query = query.trim().toLowerCase();
     if (!this._queryHistory.includes(query)) {
       this._queryHistory.unshift(query);
       this._queryHistory = [...this._queryHistory].splice(0, 10);
