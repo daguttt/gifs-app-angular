@@ -2,6 +2,12 @@
   <h1 class="text-light">Gifs-App</h1>
   <hr class="text-light" />
   <div class="list-group list-reset">
-    <a href="#" class="list-group-item list-group-item-action">List Item</a>
+    <a
+      href="#"
+      class="list-group-item list-group-item-action"
+      *ngFor="let query of queryHistory"
+    >
+      {{ query }}
+    </a>
   </div>
 </aside>

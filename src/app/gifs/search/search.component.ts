@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { GifsService } from '../services/gifs.service';
 
 @Component({
   selector: 'app-search',
@@ -6,8 +7,10 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class SearchComponent {
   @ViewChild('currentSearch') currentSearch!: ElementRef<HTMLInputElement>;
+  constructor(private gifsService: GifsService) {}
   searchGifs() {
-    console.log(this.currentSearch.nativeElement.value);
+    const value: string = this.currentSearch.nativeElement.value;
+    this.gifsService.addQueryToHistory(value);
     this.currentSearch.nativeElement.value = '';
   }
 }
