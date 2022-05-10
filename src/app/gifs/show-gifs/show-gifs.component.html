@@ -1,1 +1,12 @@
-<p>show-gifs works!</p>
+<article *ngFor="let gif of gifs" class="col-md-4 col-sm-6">
+  <div class="card">
+    <img
+      [src]="gif.images.downsized_medium.url"
+      [alt]="gif.title"
+      class="card-img-top"
+    />
+    <div class="card-body">
+      <h4 class="card-title">{{ gif.title }}</h4>
+    </div>
+  </div>
+</article>

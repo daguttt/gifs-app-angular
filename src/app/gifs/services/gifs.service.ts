@@ -6,10 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class GifsService {
   private _queryHistory: string[] = [];
+  private apiKey: string = '2guOPBZNDawWyVnC1i62NHQ2zqRGO47R';
+
+  public results: any[] = [];
+
   constructor(private http: HttpClient) {}
+
   get queryHistory() {
     return [...this._queryHistory];
   }
+
   addQueryToHistory(query: string = '') {
     query = query.trim().toLowerCase();
     if (!this._queryHistory.includes(query)) {
@@ -17,13 +23,13 @@ export class GifsService {
       this._queryHistory = [...this._queryHistory].splice(0, 10);
       console.log(this._queryHistory);
     }
-    this.searchGifs();
+    this.searchGifs(query);
   }
-  searchGifs() {
+  searchGifs(query: string) {
     this.http
       .get(
-        'https://api.giphy.com/v1/gifs/search?api_key=2guOPBZNDawWyVnC1i62NHQ2zqRGO47R&q=dragon%20ball%20z&limit=10'
+        `https://api.giphy.com/v1/gifs/search?api_key=${this.apiKey}&q=${query}&limit=10`
       )
-      .subscribe((res: any) => console.log(res.data));
+      .subscribe((res: any) => (this.results = res.data));
   }
 }
