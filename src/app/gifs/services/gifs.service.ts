@@ -11,7 +11,10 @@ export class GifsService {
 
   public results: Gif[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this._queryHistory =
+      JSON.parse(localStorage.getItem('query_history')!) ?? [];
+  }
 
   get queryHistory() {
     return [...this._queryHistory];
@@ -23,6 +26,7 @@ export class GifsService {
       this._queryHistory.unshift(query);
       this._queryHistory = [...this._queryHistory].splice(0, 10);
       console.log(this._queryHistory);
+      localStorage.setItem('query_history', JSON.stringify(this._queryHistory));
     }
     this.searchGifs(query);
   }
