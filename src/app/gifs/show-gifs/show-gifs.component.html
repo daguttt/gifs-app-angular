@@ -1,4 +1,7 @@
-<article *ngFor="let gif of gifs" class="col-md-4 col-sm-6">
+<article
+  *ngFor="let gif of gifs"
+  class="col-md-4 col-sm-6 animate__animated animate__fadeIn"
+>
   <div class="card">
     <img
       [src]="gif.images.downsized_medium.url"

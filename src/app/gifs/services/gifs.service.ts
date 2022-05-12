@@ -28,7 +28,6 @@ export class GifsService {
     if (!this._queryHistory.includes(query)) {
       this._queryHistory.unshift(query);
       this._queryHistory = [...this._queryHistory].splice(0, 10);
-      console.log(this._queryHistory);
       localStorage.setItem('query_history', JSON.stringify(this._queryHistory));
     }
     this.searchGifs(query);
