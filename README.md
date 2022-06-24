@@ -2,6 +2,8 @@
 
 Project to practice basic concepts about Angular - Part of Fernando Herrera (@Klerith) Angular Course
 
+![Gifs App Image](https://i.ibb.co/mRvW7Cb/gifs-app.png)
+
 ## Techs used on this project
 
 - [Bootstrap](https://getbootstrap.com/) 5.1.3
