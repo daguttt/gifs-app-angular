@@ -36,7 +36,8 @@ export class GifsService {
     const params = new HttpParams()
       .set('api_key', this.apiKey)
       .set('q', query)
-      .set('limit', '10');
+      .set('limit', '10')
+      .set('bundle', 'sticker_layering');
     this.http
       .get<GifsSearchResponse>(`${this.serviceUrl}/search`, { params })
       .subscribe((res) => {
