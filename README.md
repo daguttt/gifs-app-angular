@@ -2,7 +2,11 @@
 
 Project to practice basic concepts about Angular - Part of Fernando Herrera (@Klerith) Angular Course
 
-![Gifs App Image](https://i.ibb.co/mRvW7Cb/gifs-app.png)
+<a href="https://gifs-app-angular-daguttt.vercel.app/" >
+  <img src="https://res.cloudinary.com/doju0qq96/image/upload/v1665340800/gifs-app-preview_vc0ye8.png" alt="Gifs App Image Preview" />
+</a>
+
+_See deployment here: [Gifs App Angular](https://gifs-app-angular-daguttt.vercel.app/)_
 
 ## Techs used on this project
 
