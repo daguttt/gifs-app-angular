@@ -1,7 +1,7 @@
-<aside class="bg-black border-right p-3" id="sidebar">
+<aside class="bg-black p-3">
   <h1 class="text-light">Gifs-App</h1>
   <hr class="text-light" />
-  <div class="list-group list-reset">
+  <div class="list-group list-group-horizontal list-reset">
     <a
       *ngFor="let query of queryHistory"
       (click)="searchAgain(query)"
